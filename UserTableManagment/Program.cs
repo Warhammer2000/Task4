@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UserTableDataLayer;
 using UserTableManagment.Authorization;
 using UserTableManagment.Services;
+using UserTableManagment;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +31,9 @@ builder.Services.AddScoped<UserService>();
 
 var app = builder.Build();
 
+await app.Services.MigrateDatabaseAsync();
 // Configure the HTTP request pipeline.
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
