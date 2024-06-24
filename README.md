@@ -18,7 +18,7 @@
 #### 📂 Файловая структура
 
 ```
-markdownКопировать код/Controllers
+/Controllers
     UsersController.cs
 /Models
     User.cs
